@@ -8,10 +8,10 @@ class Actor < ActiveRecord::Base
         [self.first_name, self.last_name].join(' ')
     end
 
-    # def list_roles
-    #     binding.pry
-    #     self.characters.map do |c|
-    #         c.name - c.show_id
-    #     end
-    # end
+    def list_roles
+        self.characters.map do |c|
+            "#{c.name} - #{c.show.name}"
+        end
+        #Character.name - #Show.name
+    end
 end
